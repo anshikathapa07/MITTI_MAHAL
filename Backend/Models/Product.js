@@ -4,7 +4,7 @@ const productSchema = new  Schema({
     name: String,
     category: String,
     description: String,
-    price : Number
+    price : String,
     
 });
 module.exports = model('product', productSchema)

@@ -3,6 +3,6 @@ const contactSchema = new  Schema({
     name: String,
     email: String,
     phone: Number,
-    message : String
+    message : String,
 });
 module.exports = model('contact', contactSchema)
