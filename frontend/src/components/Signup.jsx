@@ -15,11 +15,7 @@ const SignupSchema = Yup.object().shape({
     .required('Password is required')
     .min(8, 'Password must be at least 8 characters')
     .max(15, 'Password must be at most 15 characters'),
-   confirm_password:Yup.string()
-   .required()
-   .oneOf( [Yup.ref("password"),null], 'password must match')
-    
-  })
+})
 
 const Signup = () => {
   // step 1: formik initialization
@@ -28,7 +24,6 @@ const Signup = () => {
       name: '',
       email: '',
       password: '',
-      confirm_password:''
     },
     onSubmit: async (values, action) => {
       console.log(values);
@@ -55,13 +50,10 @@ const Signup = () => {
       <section
         className="vh-90 bg-image"
         style={{
-          backgroundImage:
-            'url(https://img.freepik.com/premium-vector/vector-background-image-pastel-colors-similarity-flying-fabric-current-creamy-paste_214228-76.jpg)',
+          backgroundImage:'url(https://img.freepik.com/premium-vector/vector-background-image-pastel-colors-similarity-flying-fabric-current-creamy-paste_214228-76.jpg)',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover'
-
-        }}
-      >
+          backgroundSize: 'cover',
+        }}>
         <div className="mask d-flex align-items-center h-75 ">
           <div className="container h-75">
             <div className="row d-flex justify-content-center align-items-center h-75">
@@ -74,8 +66,8 @@ const Signup = () => {
                     <h2 className="text-uppercase text-center mb-5">
                       Create an account
                     </h2>
-                    {/* step2: handling when submit */ }
-                    <form onSubmit={signupForm.handleSubmit}>
+                    {/* step2: handling when submit */}
+                    <form onSubmit = {signupForm.handleSubmit}>
                       <div data-mdb-input-init="" className="form-outline mb-4">
                         <input
                           type="text"
@@ -84,8 +76,9 @@ const Signup = () => {
                           onChange={signupForm.handleChange}
                           value={signupForm.values.name}
                         />
+                        <span style={{ color: 'black', fontSize: '10px' }}>{signupForm.touched.name && signupForm.errors.name}</span>
                         <label className="form-label" htmlFor="name" style={{}}>
-                          Your Name
+                         Your Name
                         </label>
                       </div>
                       <div data-mdb-input-init="" className="form-outline mb-4">
@@ -96,9 +89,10 @@ const Signup = () => {
                           onChange={signupForm.handleChange}
                           value={signupForm.values.email}
                         />
-                        <label className="form-label" htmlFor="email" style={{}}>
-                          Your Email
-                        </label>
+                        <span style={{ color: 'red', fontSize: '10px' }}>{signupForm.touched.email && signupForm.errors.email}</span>
+                          <label className="form-label" htmlFor="email" style={{}}>
+                            Your Email
+                          </label>
                       </div>
                       <div data-mdb-input-init="" className="form-outline mb-4">
                         <input
@@ -106,35 +100,24 @@ const Signup = () => {
                           id="password"
                           className="form-control form-control-lg"
                           onChange={signupForm.handleChange}
-                            value={signupForm.values.password}
+                          value={signupForm.values.password}
                         />
-                        <label className="form-label" htmlFor="password" style={{}}>
-                          <span>{}</span>
-                          Password
-                        </label>
+                        <span style={{ color: 'red', fontSize: '10px' }}>{signupForm.touched.password && signupForm.errors.password}</span>
+                          <label className="form-label" htmlFor="password" style={{}}>
+                            <span>{ }</span>
+                            Password
+                          </label>
                       </div>
-                      <div data-mdb-input-init="" className="form-outline mb-4">
-                        <input
-                          type="password"
-                          id="confirm_password"
-                          className="form-control form-control-lg"
-                          onChange={signupForm.handleChange}
-                            value={signupForm.values.confirm_password}
-                        />
-                        <label className="form-label" htmlFor="confirm_password" style={{}}>
-                          Confirm your password
-                        </label>
-                      </div>
-                      <div className="form-check d-flex justify-content-center mb-5">
+                    <div className="form-check d-flex justify-content-center mb-5">
                         <input
                           className="form-check-input me-2"
                           type="checkbox"
                           defaultValue=""
-                          id="form2Example3cg"
+                          id="aggrement"
                         />
-                        <label className="form-check-label" htmlFor="form2Example3g">
+                        <label className="form-check-label" htmlFor="aggrement">
                           I agree all statements in{" "}
-              
+
                           <a href="#!" className="text-body">
                             <u>Terms of service</u>
                           </a>

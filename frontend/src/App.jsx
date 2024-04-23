@@ -15,7 +15,7 @@ import AddProd from './components/AddProd'
 const App = () => {
   return (
     <div>
-      <SnackbarProvider/>
+      <SnackbarProvider>
       <BrowserRouter>
       <Navbar />
       <Routes>
@@ -28,6 +28,7 @@ const App = () => {
         <Route path='/AddProd' element={<AddProd />}/>
         </Routes>
       </BrowserRouter>
+      </SnackbarProvider>
     </div>
   )
 }
