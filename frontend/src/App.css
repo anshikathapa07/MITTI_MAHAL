@@ -1,0 +1,19 @@
+.product{
+    margin-left: 30% ;
+
+
+}
+.inputBox{
+    padding: 7px;
+    display: block;
+    border: 1px solid black;
+    width:   300px ;
+    margin: 2opx ;
+
+}
+.appbutton{
+    margin-bottom: 20%;
+    margin-top:  50%;
+    border: 1px solid darkred;
+    width: 100px;
+}
