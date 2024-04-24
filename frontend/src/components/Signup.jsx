@@ -89,8 +89,8 @@ const Signup = () => {
                           onChange={signupForm.handleChange}
                           value={signupForm.values.email}
                         />
-                        <span style={{ color: 'red', fontSize: '10px' }}>{signupForm.touched.email && signupForm.errors.email}</span>
-                          <label className="form-label" htmlFor="email" style={{}}>
+                        <span style={{ color:'red', fontSize:'10' }}>{signupForm.touched.email && signupForm.errors.email}</span>
+                          <label className="form-label" htmlFor="email" style={{color: 'solid black', fontFamily:'sans-serif',fontSize: '40'}}>
                             Your Email
                           </label>
                       </div>
@@ -102,7 +102,7 @@ const Signup = () => {
                           onChange={signupForm.handleChange}
                           value={signupForm.values.password}
                         />
-                        <span style={{ color: 'red', fontSize: '10px' }}>{signupForm.touched.password && signupForm.errors.password}</span>
+                        <span style={{ color:'red', fontSize: '10' }}>{signupForm.touched.password && signupForm.errors.password}</span>
                           <label className="form-label" htmlFor="password" style={{}}>
                             <span>{ }</span>
                             Password
@@ -125,10 +125,11 @@ const Signup = () => {
                       </div>
                       <div className="d-flex justify-content-center">
                         <button
-                          type="button"
+                          type="submit"
                           data-mdb-button-init=""
                           data-mdb-ripple-init=""
-                          className="btn btn-danger btn-block btn-lg  text-body"
+                          className="btn btn-danger btn-lg btn-block text-body"
+                          id='submit'
                         >
                           Signup
                         </button>
