@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
@@ -72,7 +71,7 @@ const Login = () => {
                           className="fw-normal mb-3 pb-3"
                           style={{ letterSpacing: 1 }}
                         >
-                          Sign into your account
+                          login into your account
                         </h5>
                         <div data-mdb-input-init="" className="form-outline mb-4">
                           <input
@@ -92,10 +91,10 @@ const Login = () => {
                           <input
                             type="password"
                             id="form2Example27"
-                            namw="name"
+                            name="password"
                             className="form-control form-control-lg"
                             onChange={LoginForm.handleChange}
-                            value={LoginForm.values.name}
+                            value={LoginForm.values.password}
                           />
                           <label className="form-label" htmlFor="form2Example27">
                           <span>{LoginForm.touched.password && LoginForm.errors.password}</span>
