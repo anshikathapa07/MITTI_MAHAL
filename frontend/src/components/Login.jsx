@@ -78,6 +78,7 @@ const Login = () => {
                           <input
                             type="email"
                             id="form2Example17"
+                            name="email"
                             className="form-control form-control-lg"
                             onChange={LoginForm.handleChange}
                             value={LoginForm.values.email}
@@ -91,6 +92,7 @@ const Login = () => {
                           <input
                             type="password"
                             id="form2Example27"
+                            namw="name"
                             className="form-control form-control-lg"
                             onChange={LoginForm.handleChange}
                             value={LoginForm.values.name}

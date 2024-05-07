@@ -8,8 +8,9 @@ const AddProduct = () => {
   const AddProductForm = useFormik({
     initialValues: {
       name: '',
-      email: '',
-      password: ''
+      category: '',
+      price: '',
+      description:'',
     },
     onSubmit: async (values, action) => {
       console.log(values);
@@ -35,30 +36,40 @@ const AddProduct = () => {
 
       <form onSubmit={AddProductForm.handleSubmit}>
         <div className="product">
-          <h1 className=' mb-3 mb-6 ' >Add Product</h1>
-          <label className=''>Name</label>
+          <div className='card bg-white justify-content-center '>
+          <div className="row justify-content-md-center h-80">
+          <div className=" col-md-6 col-lg-5  col-xl-6">
+            <h1 className=' mb-3 mb-6 '>Add Product</h1>
+          <label className=''>Name  <span className="text-danger">{AddProductForm.touched.name && AddProductForm.errors.name}</span></label>
           <input type="text" placeholder='Enter the product name' className='inputBox'
+           id="name"
             onChange={AddProductForm.handleChange}
             value={AddProductForm.values.name}>
           </input>
-          <label>Category</label>
+          <label>Category <span className="text-danger">{AddProductForm.touched.category && AddProductForm.errors.category}</span></label>
           <input type="text" placeholder='Enter the  category of product ' className='inputBox'
+          id="category"
             onChange={AddProductForm.handleChange}
             value={AddProductForm.values.category}>
           </input>
-          <label>Price</label>
+          <label>Price <span className="text-danger">{AddProductForm.touched.price && AddProductForm.errors.price}</span></label>
           <input type="text" placeholder='Enter the product price' className='inputBox'
+          id="price"
             onChange={AddProductForm.handleChange}
             value={AddProductForm.values.price}>
           </input>
-          <label>Description</label>
+          <label>Description <span className="text-danger">{AddProductForm.touched.description && AddProductForm.errors.description}</span></label>
           <input type="text" placeholder='Enter the product description' className='inputBox'
+          id="description"
             onChange={AddProductForm.handleChange}
             value={AddProductForm.values.description}>
           </input>
-          <button type='submit' className=" btn btn-danger mt-5 p-4">Add Product</button>
+          <button type='submit' className=" btn btn-danger btn-block btn-lg text-block mt-3 p-4">Add Product</button>
         </div>
-      </form>
+      </div>
+      </div>
+      </div>
+    </form>
     </div>
 
   )

@@ -1,5 +1,7 @@
 .product{
     margin-left: 30% ;
+    justify-content: center;
+
 
 
 }
@@ -13,7 +15,11 @@
 }
 .appbutton{
     margin-bottom: 20%;
-    margin-top:  50%;
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid darkred;
-    width: 100px;
+    width: 30px;
 }
+

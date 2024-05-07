@@ -1,6 +1,6 @@
 const {Schema, model}= require('../connection')
 const contactSchema = new  Schema({
-    name: String,
+    fullname: String,
     email: String,
     phone: Number,
     message : String,
