@@ -35,7 +35,7 @@ const Contact = () => {
       console.log(res.status)
       action.resetForm()
       if (res.status === 200) {
-        enqueueSnackbar('Submit successful', { variant: 'danger' })
+        enqueueSnackbar('Submit successful', { variant: 'success' })
       } else {
         enqueueSnackbar('Submit failed', { variant: 'error' })
       }

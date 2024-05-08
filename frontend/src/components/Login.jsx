@@ -32,7 +32,7 @@ const Login = () => {
       console.log(res.status)
       action.resetForm()
       if (res.status === 200) {
-        enqueueSnackbar('login successful', { variant: 'danger' })
+        enqueueSnackbar('login successful', { variant: 'success' })
       } else {
         enqueueSnackbar('login failed', { variant: 'error' })
       }
