@@ -61,17 +61,38 @@ const Navbar = () => {
               <div className="flex flex-shrink-0 items-center">
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  src=""
                   alt="Your Company"
                 />
               </div>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
-                  {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+                  {/* Current: "bg-white-900 text-white", Default: "text-dark-300 hover:bg-gray-700 hover:text-white" */}
+                  <Link
+                    to="/Home"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                    aria-current="page"
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    to=""
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                    
+                  >
+                    About
+                  </Link>
+                  <Link
+                    to="/ProductListing"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                    
+                  >
+                    ProductListing
+                  </Link>
                   <Link
                     to="/Login"
-                    className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                    aria-current="page"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                    
                   >
                     Login
                   </Link>
@@ -118,7 +139,7 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-              {/* Profile dropdown */}
+              Profile dropdown
               <div className="relative ml-3">
                 <div>
                   <button

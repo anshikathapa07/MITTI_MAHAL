@@ -52,7 +52,7 @@ const Signup = () => {
   })
   return (
     <div>
-      <div className=" h-screen flex items-center justify-center " style={{ backgroundImage: "url('https://img.freepik.com/free-vector/baige-paper-layers-3d-abstract-gradient-papercut-colorful-origami-shape-concept_1217-4942.jpg')", backgroundSize: "cover" }}>
+      <div className=" h-screen flex items-center justify-center " style={{ backgroundImage: "url('https://static.vecteezy.com/system/resources/previews/015/548/257/non_2x/potter-in-apron-holds-jug-made-by-himself-happy-guy-shows-ceramic-vase-in-pottery-workshop-man-creates-clayware-earthenware-crockery-stoneware-outline-colorful-illustration-vector.jpg')", backgroundSize: "cover",backgroundRepeat:'no-repeat' }}>
         <div className="relative mx-auto w-full max-w-md bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-xl sm:px-10 mt-6 flex items-center justify-center ">
           <div className="w-full">
             <div className="text-center">

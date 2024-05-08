@@ -7,6 +7,7 @@ import Signup from './components/Signup'
 import{SnackbarProvider} from 'notistack'
 import Contact from './components/Contact'
 import AddProduct from './components/AddProduct'
+import ProductListing from './components/ProductListing'
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/Signup' element={<Signup />}/>
         <Route path='/Contact' element={<Contact />}/>
         <Route path='/AddProduct' element={<AddProduct />}/>
+        <Route path='/ProductListing' element={<ProductListing />}/>
         </Routes>
       </BrowserRouter>
       </SnackbarProvider>

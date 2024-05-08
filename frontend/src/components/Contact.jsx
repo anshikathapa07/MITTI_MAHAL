@@ -25,7 +25,7 @@ const Contact = () => {
     },
     onSubmit: async (values, action) => {
       console.log(values);
-      const res = await fetch('http://localhost:3000/Contact/add', {
+      const res = await fetch('http://localhost:3000/contact/add', {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {

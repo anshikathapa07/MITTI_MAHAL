@@ -2,15 +2,15 @@ import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
-import '../App.css'
 
 const AddProduct = () => {
-  const AddProductForm = useFormik({
+const AddProductForm = useFormik({
     initialValues: {
       name: '',
       category: '',
       price: '',
-      description:'',
+      description: '',
+      image: '',
     },
     onSubmit: async (values, action) => {
       console.log(values);
@@ -28,51 +28,103 @@ const AddProduct = () => {
       } else {
         enqueueSnackbar('Submit failed', { variant: 'error' })
       }
-    },
+    }
+
 
   })
   return (
-    <div>
+    <section className="bg-white dark:bg-gray-900" style={{ backgroundImage: "url(https://img.freepik.com/free-photo/monochromatic-still-life-composition-with-tableware_23-2148869761.jpg)", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+      <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+        <h1 className="mb-4 text-3xl font-bold text-dark-900 dark:text-dark">
+          Add a new product
+        </h1>
+        <form onSubmit={AddProductForm.handleSubmit}>
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="name"
+                className="block mb-2 text-lg font-medium text-dark-900 dark:text-dark"
+              >
+                Product Name
+              </label><span style={{color: 'red', fontSize: '10'}}>{AddProductForm.touched.name && AddProductForm.errors.name}</span>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                onChange={AddProductForm.handleChange}
+                value={AddProductForm.values.name}
+                className="bg-white border border-gray-300 text-dark-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-dark-700 dark:border-dark-600 dark:placeholder-dark-400 dark:text- darkdark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Type product name"
+                required=""
+              />
+            </div>
+            <div className="w-full">
+              <label
+                htmlFor="price"
+                className="block mb-2 text-lg font-medium text-dark-900 dark:text-black"
+              >
+                Price
+              </label><span style={{color: 'red', fontSize: '10'}}>{AddProductForm.touched.price && AddProductForm.errors.price}</span>
+              <input
+                type="number"
+                name="price"
+                id="price"
+                onChange={AddProductForm.handleChange}
+                value={AddProductForm.values.price}
+                className="bg-white border border-gray-300 text-dark-900 text-lg rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-dark-700 dark:border-dark-600 dark:placeholder-dark-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="$2999"
+                required=""
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="category"
+                className="block mb-2 text-lg font-medium text-dark-900 dark:text-black"
+              >
+                Category
+              </label><span style={{color: 'red', fontSize: '10'}}>{AddProductForm.touched.category&& AddProductForm.errors.category}</span>
+              <select
+                id="category"
+                onChange={AddProductForm.handleChange}
+                value={AddProductForm.values.category}
+                className="bg-white border border-dark-300 text-dark-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3.5 dark:bg-dark-700 dark:border-black-600 dark:placeholder-dark-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              >
+                <option selected="">Select category</option>
+                <option value="showpieces">Showpieces</option>
+                <option value="decorative item">Decorative item</option>
+                <option value="utensils">Utensils</option>
+                <option value="WB">Water Bottles</option>
+              </select>
+            </div>
+            <div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="description"
+                className="block mb-2 text-lg font-medium text-dark-900 dark:text-black"
+              >
+                Description
+              </label><span style={{color: 'red', fontSize: '10'}}>{AddProductForm.touched.description && AddProductForm.errors.description}</span>
+              <textarea
+                id="description"
+                onChange={AddProductForm.handleChange}
+                value={AddProductForm.values.description}
+                rows={8}
+                className="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-dark-600 dark:placeholder-dark-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Your description here"
+              
+              />
+            </div>
+          </div>
 
-      <form onSubmit={AddProductForm.handleSubmit}>
-        <div className="product">
-          <div className='card bg-white justify-content-center '>
-          <div className="row justify-content-md-center h-80">
-          <div className=" col-md-6 col-lg-5  col-xl-6">
-            <h1 className=' mb-3 mb-6 '>Add Product</h1>
-          <label className=''>Name  <span className="text-danger">{AddProductForm.touched.name && AddProductForm.errors.name}</span></label>
-          <input type="text" placeholder='Enter the product name' className='inputBox'
-           id="name"
-            onChange={AddProductForm.handleChange}
-            value={AddProductForm.values.name}>
-          </input>
-          <label>Category <span className="text-danger">{AddProductForm.touched.category && AddProductForm.errors.category}</span></label>
-          <input type="text" placeholder='Enter the  category of product ' className='inputBox'
-          id="category"
-            onChange={AddProductForm.handleChange}
-            value={AddProductForm.values.category}>
-          </input>
-          <label>Price <span className="text-danger">{AddProductForm.touched.price && AddProductForm.errors.price}</span></label>
-          <input type="text" placeholder='Enter the product price' className='inputBox'
-          id="price"
-            onChange={AddProductForm.handleChange}
-            value={AddProductForm.values.price}>
-          </input>
-          <label>Description <span className="text-danger">{AddProductForm.touched.description && AddProductForm.errors.description}</span></label>
-          <input type="text" placeholder='Enter the product description' className='inputBox'
-          id="description"
-            onChange={AddProductForm.handleChange}
-            value={AddProductForm.values.description}>
-          </input>
-          <button type='submit' className=" btn btn-danger btn-block btn-lg text-block mt-3 p-4">Add Product</button>
-        </div>
+          <button
+            type="button"
+            className=" w-full focus:outline-none text-white bg-black hover:bg-red-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-lg px-5 py-2.5 mt-4 mb-2 dark:focus:ring-red-900"
+          > Add product</button>
+        </form>
       </div>
-      </div>
-      </div>
-    </form>
-    </div>
-
+    </section>
   )
-}
 
+}
 export default AddProduct

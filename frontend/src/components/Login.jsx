@@ -1,7 +1,11 @@
 import React from 'react'
+// import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
+// import { Link, useNavigate } from 'react-router-dom'
+// import useAppContext from '../AppContext';
+
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -14,6 +18,8 @@ const LoginSchema = Yup.object().shape({
 })
 
 const Login = () => {
+  // const { setLoggedIn } = useAppContext();
+  // const navigate = useNavigate();
   // step 1: formik initialization
   const LoginForm = useFormik({
     initialValues: {
@@ -31,19 +37,18 @@ const Login = () => {
       });
       console.log(res.status)
       action.resetForm()
-      if (res.status === 200) {
-        enqueueSnackbar('login successful', { variant: 'success' })
-      } else {
-        enqueueSnackbar('login failed', { variant: 'error' })
+      if(res.status===200){
+        enqueueSnackbar('Signup successful', {variant: 'success'})
+      }else {
+        enqueueSnackbar('Signup failed',{variant: 'error'})
       }
     },
-
-    validationSchema: LoginSchema
+     validationSchema: LoginSchema
   })
 
   return (
     <div>
-      <section className="vh-100" style={{backgroundImage:"url(https://wallpapers.com/images/high/light-brown-background-ze8u67khwccsklg3.webp)",backgroundSize:"cover" }}>
+      <section className="vh-100" style={{ backgroundImage: "url(https://wallpapers.com/images/high/light-brown-background-ze8u67khwccsklg3.webp)", backgroundSize: "cover" }}>
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-xl-10">
@@ -84,7 +89,7 @@ const Login = () => {
                           />
                           <label className="form-label" htmlFor="email">
                             Email address
-                          </label><span style={{color: 'brown', fontSize: '10'}}>{LoginForm.touched.email && LoginForm.errors.email}</span>
+                          </label><span style={{ color: 'brown', fontSize: '10' }}>{LoginForm.touched.email && LoginForm.errors.email}</span>
                         </div>
                         <div data-mdb-input-init="" className="form-outline mb-4">
                           <input
@@ -97,14 +102,14 @@ const Login = () => {
                           />
                           <label className="form-label" htmlFor="password">
                             Password
-                          </label><span style={{color: 'brown', fontSize: '10'}}>{LoginForm.touched.password&& LoginForm.errors.password}</span>
+                          </label><span style={{ color: 'brown', fontSize: '10' }}>{LoginForm.touched.password && LoginForm.errors.password}</span>
                         </div>
                         <div className="pt-1 mb-4">
                           <button
                             data-mdb-button-init=""
                             data-mdb-ripple-init=""
                             className="btn btn-dark btn-lg btn-block"
-                            type="button"
+                            type="submit"
                           >
                             Login
                           </button>
@@ -118,7 +123,7 @@ const Login = () => {
                             signup here
                           </a>
                         </p>
-                     </form>
+                      </form>
                     </div>
                   </div>
                 </div>
