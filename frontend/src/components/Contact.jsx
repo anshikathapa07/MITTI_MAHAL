@@ -1,9 +1,51 @@
 import React from 'react'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import { enqueueSnackbar } from 'notistack'
+
+const contactSchema = Yup.object().shape({
+  fullname: Yup.string()
+    .required('Name is required')
+    .min(3, 'Name must be at least 3 characters')
+    .max(15, 'Name must be at most 15 characters'),
+  email: Yup.string()
+    .required('Email is required')
+    .email('Email is invalid'),
+  message: Yup.string()
+    .required('Message is required')
+})
 
 const Contact = () => {
+  // step 1: formik initialization
+  const ContactForm = useFormik({
+    initialValues: {
+      fullname: '',
+      email: '',
+      message: '',
+    },
+    onSubmit: async (values, action) => {
+      console.log(values);
+      const res = await fetch('http://localhost:3000/Contact/add', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log(res.status)
+      action.resetForm()
+      if (res.status === 200) {
+        enqueueSnackbar('Submit successful', { variant: 'danger' })
+      } else {
+        enqueueSnackbar('Submit failed', { variant: 'error' })
+      }
+    },
+
+    validationSchema: contactSchema
+  })
   return (
     <div>
-      <section className="text-gray-600 body-font bg-yellow-100">
+      <section className="text-dark-600 body-font bg-white  h-screen flex items-center justify-center " style={{ backgroundImage: "url(https://wallpapers.com/images/high/light-brown-background-ze8u67khwccsklg3.webp)", backgroundSize: "cover" }}>
         <div
           className="container flex flex-col md:flex-row lg:max-w-5xl w-full px-5 py-12 md:py-24 mx-auto section"
           id="contact-form"
@@ -19,11 +61,13 @@ const Contact = () => {
               <br />
               You can also email us at
               <a
-                href=":contact@example.com"
-                className="font-semibold border-b-4 border-green-400"
+                href=": mittimahal01@gmail.com"
+                className="font-semibold border-b-4 border-red-400 p-2"
               >
-                contact@example.com
+                mittimahal01@gmail.com
               </a>
+              < br />
+              < br />
             </p>
             <p className="leading-relaxed text-xl text-gray-900 mt-8">
               Connect with us on social media:
@@ -69,21 +113,22 @@ const Contact = () => {
             <h1 className="text-4xl text-gray-800 sm:text-4xl font-bold title-font mb-4">
               Contact Us
             </h1>
-            <form action="send-contact.php" method="post" id="submit-contact-form">
+            <form onSubmit={ContactForm.handleSubmit}>
               <div className="p-2 w-full">
                 <div className="relative">
                   <label
-                    htmlFor="name"
+                    htmlFor="fullname"
                     className="leading-7 py-4 text-lg text-gray-900"
                   >
                     Your Name
-                  </label>
+                  </label><span style={{color: 'red', fontSize: '10'}}>{ContactForm.touched.fullname && ContactForm.errors.fullname}</span>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    required=""
+                    id="fullname"
+                    name="fullname"
                     className="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 py-1 px-1 leading-8 transition-colors duration-200 ease-in-out "
+                    onChange={ContactForm.handleChange}
+                    value={ContactForm.values.fullname}
                   />
                 </div>
               </div>
@@ -94,14 +139,16 @@ const Contact = () => {
                     className="leading-7 py-4 text-lg text-gray-900"
                   >
                     Your Email
-                  </label>
+                  </label><span style={{color: 'red', fontSize: '10'}}>{ContactForm.touched.email && ContactForm.errors.email}</span>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required=""
                     className="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 py-1 px-1 leading-8 transition-colors duration-200 ease-in-out "
-                  />
+                    onChange={ContactForm.handleChange}
+                    value={ContactForm.values.email}
+                />
                 </div>
               </div>
               <div className="p-2 w-full">
@@ -111,13 +158,16 @@ const Contact = () => {
                     className="leading-7 py-4 text-lg text-gray-900"
                   >
                     Your Message
-                  </label>
+                  </label><span style={{color: 'red', fontSize: '10'}}>{ContactForm.touched.message && ContactForm.errors.message}</span>
                   <textarea
+                    type='text'
                     id="message"
                     name="message"
                     required=""
                     className="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out "
                     defaultValue={""}
+                    onChange={ContactForm.handleChange}
+                    value={ContactForm.values.message}
                   />
                 </div>
               </div>

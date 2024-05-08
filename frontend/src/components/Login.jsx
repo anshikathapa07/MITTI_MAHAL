@@ -10,7 +10,7 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string()
     .required('Password is required')
     .min(8, 'Password must be at least 8 characters')
-    .max(15, 'Password must be at most 15 characters')
+    .max(15, 'Password must be at most 15 characters'),
 })
 
 const Login = () => {
@@ -18,7 +18,7 @@ const Login = () => {
   const LoginForm = useFormik({
     initialValues: {
       email: '',
-      password: ''
+      password: '',
     },
     onSubmit: async (values, action) => {
       console.log(values);
@@ -32,7 +32,7 @@ const Login = () => {
       console.log(res.status)
       action.resetForm()
       if (res.status === 200) {
-        enqueueSnackbar('login successful', { variant: 'success' })
+        enqueueSnackbar('login successful', { variant: 'danger' })
       } else {
         enqueueSnackbar('login failed', { variant: 'error' })
       }
@@ -43,7 +43,7 @@ const Login = () => {
 
   return (
     <div>
-      <section className="vh-100" style={{ backgroundColor:'beige' }}>
+      <section className="vh-100" style={{backgroundImage:"url(https://wallpapers.com/images/high/light-brown-background-ze8u67khwccsklg3.webp)",backgroundSize:"cover" }}>
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-xl-10">
@@ -76,30 +76,28 @@ const Login = () => {
                         <div data-mdb-input-init="" className="form-outline mb-4">
                           <input
                             type="email"
-                            id="form2Example17"
+                            id="email"
                             name="email"
                             className="form-control form-control-lg"
                             onChange={LoginForm.handleChange}
                             value={LoginForm.values.email}
                           />
-                          <label className="form-label" htmlFor="form2Example17">
-                          <span>{LoginForm.touched.email && LoginForm.errors.email}</span>
+                          <label className="form-label" htmlFor="email">
                             Email address
-                          </label>
+                          </label><span style={{color: 'brown', fontSize: '10'}}>{LoginForm.touched.email && LoginForm.errors.email}</span>
                         </div>
                         <div data-mdb-input-init="" className="form-outline mb-4">
                           <input
                             type="password"
-                            id="form2Example27"
+                            id="password"
                             name="password"
                             className="form-control form-control-lg"
                             onChange={LoginForm.handleChange}
                             value={LoginForm.values.password}
                           />
-                          <label className="form-label" htmlFor="form2Example27">
-                          <span>{LoginForm.touched.password && LoginForm.errors.password}</span>
+                          <label className="form-label" htmlFor="password">
                             Password
-                          </label>
+                          </label><span style={{color: 'brown', fontSize: '10'}}>{LoginForm.touched.password&& LoginForm.errors.password}</span>
                         </div>
                         <div className="pt-1 mb-4">
                           <button
@@ -116,17 +114,11 @@ const Login = () => {
                         </a>
                         <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
                           Don't have an account?{" "}
-                          <a href="#!" style={{ color: "#393f81" }}>
-                            Register here
+                          <a href="/signup" style={{ color: "#393f81" }}>
+                            signup here
                           </a>
                         </p>
-                        <a href="#!" className="small text-muted">
-                          Terms of use.
-                        </a>
-                        <a href="#!" className="small text-muted">
-                          Privacy policy
-                        </a>
-                      </form>
+                     </form>
                     </div>
                   </div>
                 </div>
