@@ -140,7 +140,7 @@ const AddProductForm = useFormik({
                 onChange={AddProductForm.handleChange}
                 value={AddProductForm.values.description}
                 rows={8}
-                className="block p-2.5 w-full text-lg text-dark-900 bg-white rounded-lg border border-dark-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-dark-600 dark:placeholder-dark-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="block p-2.5 w-full text-lg text-dark-900 bg-white rounded-lg border border-dark-300 focus:ring-primary-500 focus:border-primary-500  dark:border-dark-600  dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Your description here"
               
               />

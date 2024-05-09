@@ -47,7 +47,7 @@ const Login = () => {
   })
 
   return (
-    <>
+    <form>
     {/* https://play.tailwindcss.com/MIwj5Sp9pw */}
     <div className="py-16">
       <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
@@ -55,13 +55,13 @@ const Login = () => {
           className="hidden lg:block lg:w-1/2 bg-cover"
           style={{
             backgroundImage:
-              'url("https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80")'
+              'url("https://img.freepik.com/premium-photo/illustration-woman-dress-standing-shopping-cart_988987-18644.jpg")'
           }}
         ></div>
         <div className="w-full p-8 lg:w-1/2">
-          <h2 className="text-2xl font-semibold text-gray-700 text-center">
-            Brand
-          </h2>
+          <h1 className="text-2xl font-semibold text-gray-700 text-center">
+            Login
+          </h1>
           <p className="text-xl text-gray-600 text-center">Welcome back!</p>
           <a
             href="#"
@@ -136,7 +136,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  </>
+  </form>
   
   )
 }
