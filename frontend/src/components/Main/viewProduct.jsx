@@ -35,13 +35,13 @@ const {isInCart, addItemToCart} = useCartContext();
 
               </div>
               <div className="col-md-6">
-              <h1 className=' fw-semibold fs-2 mt-3 mb-3' style={{ fontFamily: "serif" }}>{productList.pname}</h1>
-                <p className='text-red-800 fs-5 fw-bold' style={{ fontFamily: "cursive" }}>{productList.pprice}</p>
-                <p className='text-secondary mt-4 mb-4 fs-5' style={{ fontFamily: "serif" }}>{productList.pdetail}</p>
+              <h1 className=' fw-semibold fs-2 mt-3 mb-3' style={{ fontFamily: "serif" }}>{productList.name}</h1>
+                <p className='text-red-800 fs-5 fw-bold' style={{ fontFamily: "cursive" }}>{productList.price}</p>
+                <p className='text-secondary mt-4 mb-4 fs-5' style={{ fontFamily: "serif" }}>{productList.description}</p>
                 <button disabled={isInCart(productList)} onClick={e => addItemToCart(productList)} className='mt-2 mb-2 bg-success  py-1 px-3 text-white  rounded' >
                         {isInCart(productList) ? 'Already Added' : 'Add to Cart'}
                     </button>
-                <p className=' mb-2 mt-4 ' ><span className="fw-bold me-1">Category:</span>{productList.pcategory}</p>
+                <p className=' mb-2 mt-4 ' ><span className="fw-bold me-1">Category:</span>{productList.category}</p>
                 <p className=""><span className="fw-bold me-1">Tags:</span>Unique,Latest</p>
 
               </div>

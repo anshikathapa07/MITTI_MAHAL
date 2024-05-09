@@ -24,7 +24,7 @@ const ProductListing = () => {
       <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
         <img
           className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
-         src={'http://localhost:3000' + item.image}
+          src={'http://localhost:3000' + item.image}
         />
         <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
           <h3 className="py-1 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">

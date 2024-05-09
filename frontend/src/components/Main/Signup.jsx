@@ -52,8 +52,8 @@ const Signup = () => {
   })
   return (
     <div>
-      <div className=" h-screen flex items-center justify-center " style={{ backgroundImage: "url('https://img.freepik.com/free-photo/flat-lay-stone-collection-copy-space_23-2148874526.jpg?size=626&ext=jpg&ga=GA1.1.352128725.1708420685&semt=ais_user')", backgroundSize: "cover",backgroundRepeat:'no-repeat' }}>
-        <div className="relative mx-auto w-full max-w-md bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-xl sm:px-10 mt-6 flex items-center justify-center ">
+      <div className=" h-screen flex items-center justify-center " style={{ backgroundImage: "url('https://wallpaperswide.com/download/aero_light_colors-wallpaper-1920x1200.jpg')", backgroundSize: "cover",backgroundRepeat:'no-repeat' }}>
+        <div className="relative mx-auto w-full max-w-md bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-xl sm:px-10 mt-3 flex items-center justify-center ">
           <div className="w-full">
             <div className="text-center">
               <h1 className="text-3xl font-semibold text-gray-900">Sign up</h1>

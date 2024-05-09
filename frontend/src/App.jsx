@@ -5,13 +5,15 @@ import Navbar from './components/Main/Navbar'
 import Login from './components/Main/Login'
 import Signup from './components/Main/Signup'
 import { SnackbarProvider } from 'notistack'
-import Contact from './components/Contact'
 import AddProduct from './components/Admin/AddProduct'
 import ProductListing from './components/Main/ProductListing'
-import Feedback from './components/Feedback'
+import Feedback from './components/Main/Feedback'
 import Admin from './components/Admin/Index'
 import Main from './components/Main/Index'
 import ViewProduct from './components/Main/viewProduct'
+import { AppProvider } from './components/Context/UserContext'
+import { CartProvider } from './components/Context/CartContext'
+import Contact from './components/Main/Contact'
 
 
 
@@ -20,7 +22,8 @@ const App = () => {
     <div>
       <SnackbarProvider>
         <BrowserRouter>
-    
+    <AppProvider>
+      <CartProvider>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Home' element={<Home />} />
@@ -28,7 +31,7 @@ const App = () => {
 
 
             <Route path='/Admin' element={<Admin />}>
-              <Route path='AddProduct' element={<AddProduct />} />
+            <Route path='AddProduct' element={<AddProduct />} />
 
             </Route>
 
@@ -43,6 +46,8 @@ const App = () => {
             </Route>
 
           </Routes>
+          </CartProvider>
+    </AppProvider>
         </BrowserRouter>
       </SnackbarProvider>
     </div>

@@ -165,7 +165,6 @@ const Contact = () => {
                     name="message"
                     required=""
                     className="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out "
-                    defaultValue={""}
                     onChange={ContactForm.handleChange}
                     value={ContactForm.values.message}
                   />
