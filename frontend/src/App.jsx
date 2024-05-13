@@ -14,6 +14,7 @@ import ViewProduct from './components/Main/viewProduct'
 import { AppProvider } from './components/Context/UserContext'
 import { CartProvider } from './components/Context/CartContext'
 import Contact from './components/Main/Contact'
+import About from './components/Main/About'
 
 
 
@@ -42,6 +43,7 @@ const App = () => {
             <Route path='ProductListing' element={<ProductListing />} />
             <Route path='Feedback' element={<Feedback />} />
             <Route path='viewProduct/:id' element={<ViewProduct />} />
+            <Route path='About' element={<About />} />
 
             </Route>
 

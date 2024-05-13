@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import {  useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import useCartContext from '../Context/CartContext';
 
 
 const ViewProduct = () => {
   const { id } = useParams();
-const {isInCart, addItemToCart} = useCartContext();
+  const { isInCart, addItemToCart } = useCartContext();
   const [productList, setproductList] = useState([]);
   const fetchUserData = async () => {
     const res = await fetch('http://localhost:3000/product/getbyid/' + id);
@@ -27,28 +27,62 @@ const {isInCart, addItemToCart} = useCartContext();
       {
         productList !== null ? (
 
-          <div className="container pt-24 px-16">
-            <div className="row ">
-  
-              <div className="col-md-4 block m-auto">
-                <img src={'http://localhost:3000/' + productList.image} onClick={window.scrollTo(0, 0)} alt="" className="  img-fluid  w-100  " />
 
-              </div>
-              <div className="col-md-6">
-              <h1 className=' fw-semibold fs-2 mt-3 mb-3' style={{ fontFamily: "serif" }}>{productList.name}</h1>
-                <p className='text-red-800 fs-5 fw-bold' style={{ fontFamily: "cursive" }}>{productList.price}</p>
-                <p className='text-secondary mt-4 mb-4 fs-5' style={{ fontFamily: "serif" }}>{productList.description}</p>
-                <button disabled={isInCart(productList)} onClick={e => addItemToCart(productList)} className='mt-2 mb-2 bg-success  py-1 px-3 text-white  rounded' >
+          <div className="bg-gray-100  py-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col md:flex-row -mx-4">
+                <div className="md:flex-1 px-4">
+                  <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+                    <img
+                      className="w-full h-full object-cover"
+                      src={'http://localhost:3000' + productList.image}
+                      alt="Product Image"
+                    />
+                  </div>
+           
+                </div>
+                <div className="md:flex-1 px-4">
+                  <h2 className="text-2xl font-bold text-black mb-2">
+                    {productList.name}
+                  </h2>
+                 
+                  <div className="flex mb-4">
+                    <div className="mr-4">
+                      <span className="font-bold text-black">
+                        ₹{productList.price}
+                      </span>                    
+                    </div>
+                  
+                    <div>
+                      <span className="font-bold text-black">
+                        Availability:
+                      </span>
+                      <span className="text-gray-600 bg-green-800 rounded-2xl px-3 font-serif  dark:text-gray-300">In Stock</span>
+                    </div>
+                  </div>
+           
+        
+                  <div>
+                    <span className="font-bold text-black text-lg">
+                      Product Description:
+                    </span>
+                    <p className="text-gray-800 text-sm mt-2">
+                     {productList.description}
+                    </p>
+                  </div>
+
+                  <div className="w-1/2 px-2">
+                      <button disabled={isInCart(productList)} onClick={e => addItemToCart(productList)} className='mt-2 mb-2 bg-green-800   py-1 px-5 rounded-xl text-white  rounded' >
                         {isInCart(productList) ? 'Already Added' : 'Add to Cart'}
-                    </button>
-                <p className=' mb-2 mt-4 ' ><span className="fw-bold me-1">Category:</span>{productList.category}</p>
-                <p className=""><span className="fw-bold me-1">Tags:</span>Unique,Latest</p>
-
+                      </button>
+                    </div>
+                </div>
               </div>
             </div>
-
-
           </div>
+
+
+
 
 
         ) : (
@@ -58,6 +92,8 @@ const {isInCart, addItemToCart} = useCartContext();
         )
       }
     </>
+
+
   )
 }
 

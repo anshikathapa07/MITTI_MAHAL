@@ -45,7 +45,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="order-3 md:order-3">
-        <button className="px-4 py-2 bg-orange-700 hover:bg-yellow-700 text--50 whiteounded-xl flex items-center gap-2">
+        <button className="px-4 py-2 bg-orange-700 hover:bg-yellow-700 text--50 text-white rounded-lg  rounded-xl flex items-center gap-2">
           {/* Heroicons - Login Solid */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
