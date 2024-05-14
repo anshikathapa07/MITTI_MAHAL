@@ -4,8 +4,8 @@ import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
 
 const AddProduct = () => {
-const [selFile, setSelFile] = useState([])
-const AddProductForm = useFormik({
+  const [selFile, setSelFile] = useState([])
+  const AddProductForm = useFormik({
     initialValues: {
       name: '',
       category: '',
@@ -14,7 +14,7 @@ const AddProductForm = useFormik({
       image: '',
     },
     onSubmit: async (values, action) => {
-      values.image=selFile
+      values.image = selFile
       console.log(values);
       const res = await fetch('http://localhost:3000/product/add', {
         method: 'POST',
@@ -40,14 +40,14 @@ const AddProductForm = useFormik({
     fd.append('myfile', file);
 
     const res = await fetch('http://localhost:3000/util/uploadfile', {
-        method: 'POST',
-        body: fd
+      method: 'POST',
+      body: fd
     })
     console.log(res.status);
-}
+  }
 
   return (
-    <section className="bg-white dark:bg-gray-900 " style={{opacity:".8", backgroundImage: "url(https://img.freepik.com/free-photo/monochromatic-still-life-composition-with-tableware_23-2148869761.jpg)", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+    <section className="bg-white dark:bg-gray-900 " style={{ opacity: ".8", backgroundImage: "url(https://img.freepik.com/free-photo/monochromatic-still-life-composition-with-tableware_23-2148869761.jpg)", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <h1 className="mb-4 text-3xl font-bold text-dark-900 dark:text-dark">
           Add a new product
@@ -60,7 +60,7 @@ const AddProductForm = useFormik({
                 className="block mb-2 text-lg font-medium text-dark-900 dark:text-dark"
               >
                 Product Name
-              </label><span style={{color: 'red', fontSize: '10'}}>{AddProductForm.touched.name && AddProductForm.errors.name}</span>
+              </label><span style={{ color: 'red', fontSize: '10' }}>{AddProductForm.touched.name && AddProductForm.errors.name}</span>
               <input
                 type="text"
                 name="name"
@@ -78,7 +78,7 @@ const AddProductForm = useFormik({
                 className="block mb-2 text-lg font-medium text-dark-900 dark:text-dark"
               >
                 Image
-              </label><span style={{color: 'red', fontSize: '10'}}>{AddProductForm.touched.name && AddProductForm.errors.name}</span>
+              </label><span style={{ color: 'red', fontSize: '10' }}>{AddProductForm.touched.name && AddProductForm.errors.name}</span>
               <input
                 type="file"
                 id="image"
@@ -94,7 +94,7 @@ const AddProductForm = useFormik({
                 className="block mb-2 text-lg font-medium text-dark-900 dark:text-black"
               >
                 Price
-              </label><span style={{color: 'red', fontSize: '10'}}>{AddProductForm.touched.price && AddProductForm.errors.price}</span>
+              </label><span style={{ color: 'red', fontSize: '10' }}>{AddProductForm.touched.price && AddProductForm.errors.price}</span>
               <input
                 type="number"
                 name="price"
@@ -112,7 +112,7 @@ const AddProductForm = useFormik({
                 className="block mb-2 text-lg font-medium text-dark-900 dark:text-black"
               >
                 Category
-              </label><span style={{color: 'red', fontSize: '10'}}>{AddProductForm.touched.category&& AddProductForm.errors.category}</span>
+              </label><span style={{ color: 'red', fontSize: '10' }}>{AddProductForm.touched.category && AddProductForm.errors.category}</span>
               <select
                 id="category"
                 onChange={AddProductForm.handleChange}
@@ -121,9 +121,9 @@ const AddProductForm = useFormik({
               >
                 <option selected="">Select category</option>
                 <option value="showpieces">Showpieces</option>
-                <option value="decorative item">Decorative item</option>
+                {/* <option value="decorative item">Decorative item</option> */}
                 <option value="utensils">Utensils</option>
-                <option value="WB">Water Bottles</option>
+                <option value="WB">Water Containers</option>
               </select>
             </div>
             <div>
@@ -134,7 +134,7 @@ const AddProductForm = useFormik({
                 className="block mb-2 text-lg font-medium text-dark-900 dark:text-black"
               >
                 Description
-              </label><span style={{color: 'red', fontSize: '10'}}>{AddProductForm.touched.description && AddProductForm.errors.description}</span>
+              </label><span style={{ color: 'red', fontSize: '10' }}>{AddProductForm.touched.description && AddProductForm.errors.description}</span>
               <textarea
                 id="description"
                 onChange={AddProductForm.handleChange}
@@ -142,7 +142,7 @@ const AddProductForm = useFormik({
                 rows={8}
                 className="block p-2.5 w-full text-lg text-dark-900 bg-white rounded-lg border border-dark-300 focus:ring-primary-500 focus:border-primary-500  dark:border-dark-600  dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Your description here"
-              
+
               />
             </div>
           </div>

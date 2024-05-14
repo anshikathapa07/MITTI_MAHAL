@@ -34,8 +34,8 @@ const ViewProduct = () => {
                 <div className="md:flex-1 px-4">
                   <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
                     <img
-                      className="w-full h-full object-cover"
-                      src={'http://localhost:3000' + productList.image}
+                      className="w-full h-full object-cover "
+                      src={'http://localhost:3000/' + productList.image}
                       alt="Product Image"
                     />
                   </div>

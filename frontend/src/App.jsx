@@ -15,6 +15,8 @@ import { AppProvider } from './components/Context/UserContext'
 import { CartProvider } from './components/Context/CartContext'
 import Contact from './components/Main/Contact'
 import About from './components/Main/About'
+import ForgetPassword from './components/ForgotPassword'
+import ManageUser from './components/Admin/ManageUser'
 
 
 
@@ -28,11 +30,14 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Home' element={<Home />} />
+            <Route path='/ForgotPassword' element={<ForgetPassword />} />
           
 
 
             <Route path='/Admin' element={<Admin />}>
             <Route path='AddProduct' element={<AddProduct />} />
+            <Route path='ManageUser' element={<ManageUser/>} />
+
 
             </Route>
 

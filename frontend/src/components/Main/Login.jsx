@@ -1,10 +1,9 @@
 import React from 'react'
-// import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
-// import { Link, useNavigate } from 'react-router-dom'
-// import useAppContext from '../AppContext';
+import { Link, useNavigate } from 'react-router-dom'
+import useAppContext from '../Context/UserContext';
 
 
 const LoginSchema = Yup.object().shape({
@@ -18,8 +17,8 @@ const LoginSchema = Yup.object().shape({
 })
 
 const Login = () => {
-  // const { setLoggedIn } = useAppContext();
-  // const navigate = useNavigate();
+  const { setCurrentUser, setLoggedIn } = useAppContext();
+  const navigate = useNavigate();
   // step 1: formik initialization
   const LoginForm = useFormik({
     initialValues: {
@@ -35,17 +34,27 @@ const Login = () => {
           'Content-Type': 'application/json'
         }
       });
-      console.log(res.status)
-      action.resetForm()
+      console.log(res.status);
       if (res.status === 200) {
-        enqueueSnackbar('login successful', { variant: 'success' })
+        setLoggedIn(true);
+        const data = await res.json();
+        console.log(data);
+        setCurrentUser(data);
+        sessionStorage.setItem('isloggedin', true);
+        if (data.role === 'admin') {
+          sessionStorage.setItem('admin', JSON.stringify(data));
+          navigate('/Admin/Dashboard');
+        } else {
+          sessionStorage.setItem('user', JSON.stringify(data));
+          setLoggedIn(true);
+          enqueueSnackbar("Login Successfully", { variant: "success" })
+          navigate("/User/Profile")
+        }
       } else {
-        enqueueSnackbar('login failed', { variant: 'error' })
+        enqueueSnackbar("somthing went wrong", { variant: "warning" })
       }
-    },
-    validationSchema: LoginSchema
-  })
-
+    }
+  });
   return (
     <form onSubmit={LoginForm.handleSubmit}>
       {/* https://play.tailwindcss.com/MIwj5Sp9pw */}
@@ -102,7 +111,7 @@ const Login = () => {
             <div className="mt-4">
               <label className="block text-dark text-lg font-bold mb-2">
                 Email Address
-              </label><span style={{color: 'red', fontSize: '10'}}>{LoginForm.touched.email && LoginForm.errors.email}</span>
+              </label><span style={{ color: 'red', fontSize: '10' }}>{LoginForm.touched.email && LoginForm.errors.email}</span>
               <input
                 className="bg-white-200 text-gray-700 focus:outline-none focus:shadow-outline border border-black-500 rounded py-2 px-4 block w-full appearance-none"
                 type="email"
@@ -116,10 +125,10 @@ const Login = () => {
               <div className="flex justify-between">
                 <label className="block text-dark-700 text-lg font-bold mb-2">
                   Password
-                </label><span style={{color: 'red', fontSize: '10'}}>{LoginForm.touched.paasword && LoginForm.errors.password}</span>
-                <a href="#" className="text-sm text-blue-500">
+                </label><span style={{ color: 'red', fontSize: '10' }}>{LoginForm.touched.paasword && LoginForm.errors.password}</span>
+                <Link to="/ForgotPassword" className="text-sm text-blue-500">
                   Forget Password?
-                </a>
+                </Link>
               </div>
               <input
                 className="bg-white-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
@@ -131,11 +140,11 @@ const Login = () => {
               />
             </div>
             <div className="mt-8">
-              <button className="bg-gray-900 text-white font-bold py-2 px-4 w-full rounded hover:bg-yellow-400" 
-              type="submit"
-              id="submit"
+              <button className="bg-gray-900 text-white font-bold py-2 px-4 w-full rounded hover:bg-yellow-400"
+                type="submit"
+                id="submit"
               >
-              
+
                 Login
               </button>
             </div>

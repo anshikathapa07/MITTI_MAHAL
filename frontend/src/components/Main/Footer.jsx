@@ -6,7 +6,7 @@ import { FaFacebookF } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 export default function Footer() {
   return (
-    <footer className="relative bg-orange-500 pt-8 pb-6">
+    <footer className="relative bg-white-500 pt-8 pb-6">
       <div
         className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
         style={{ height: "80px" }}
@@ -74,22 +74,22 @@ export default function Footer() {
                 <ul className="list-unstyled">
                   <li>
                     <Link className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        to="/Admin/About">About us
+                        to="/Home">Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                        to="/Main/About">About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                        to="/Main/Product">Product
                     </Link>
                   </li>
                   <li>
                     <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://blog.creative-tim.com">Blog
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial">Github
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free">Free Products
+                        href="https://blog.creative-tim.com">blog
                     </a>
                   </li>
 

@@ -1,8 +1,6 @@
 import React from 'react'
 import Navbar from './Main/Navbar'
-import img1 from '../assets/img1.jpg'
-import img2 from '../assets/img2.jpg'
-import img3 from '../assets/img3.png'
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -22,11 +20,11 @@ const Home = () => {
 
         <div className="relative pt-16 pb-32 flex content-center items-center justify-center"
           style={{
-            minHeight: "75vh"
+            minHeight: "80vh"
           }}>
           <div className="absolute top-0 w-full h-full bg-center bg-cover"
             style={{
-              backgroundImage: "url('https://i.pinimg.com/564x/ca/0a/36/ca0a369bcdb186c1cf620b35cd3e4c20.jpg')"
+              backgroundImage: "url('https://res.cloudinary.com/hz3gmuqw6/image/upload/c_fill,q_60,w_750/v1/classpop/blog/earthenware_61ce17c4e7ed3.jpg')"
             }}>
             <span id="blackOverlay" className="w-full h-full absolute opacity-75 bg-black"></span>
           </div>
@@ -34,11 +32,11 @@ const Home = () => {
             <div className="items-center flex flex-wrap">
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="">
-                  <h1 className="text-white text-orange-700 font-semibold text-5xl">
-                    Your story starts with us.
+                  <h1 className=" text-white text-orange-900 font-bold text-5xl" style={{fontFamily:"serif"}}>
+                  Crafted with Earth's Elegance
                   </h1>
-                  <p className="mt-4 text-xl text-gray-300">
-                  Welcome to our world of mud-made marvels, where nature meets craftsmanship in every product.
+                  <p className="mt-4 text-xl text-gray-300 font-semibold"style={{fontFamily:"serif"}}>
+                  Welcome to our world of mud-made marvels, <br />where nature meets craftsmanship in every product.
                   </p>
                 </div>
               </div>
@@ -53,7 +51,7 @@ const Home = () => {
           </div>
         </div>
 
-        <section className="pb-20 bg-gray-300 -mt-24">
+        <section className="pb-20 bg-white-500 -mt-24">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
@@ -287,9 +285,7 @@ const Home = () => {
                   Here are our heroes
                 </h2>
                 <p className="text-lg leading-relaxed m-4 text-gray-600">
-                  According to the National Oceanic and Atmospheric
-                  Administration, Ted, Scambos, NSIDClead scentist, puts the
-                  potentially record maximum.
+                  
                 </p>
               </div>
             </div>
@@ -298,7 +294,7 @@ const Home = () => {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src="https://play-lh.googleusercontent.com/C9CAt9tZr8SSi4zKCxhQc9v4I6AOTqRmnLchsu1wVDQL0gsQ3fmbCVgQmOVM1zPru8UH"
+                    src="img1"
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
@@ -336,7 +332,7 @@ const Home = () => {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src={img3}
+                    src=""
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
@@ -368,7 +364,7 @@ const Home = () => {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src={img2}
+                    src=""
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
@@ -406,13 +402,13 @@ const Home = () => {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src={img2}
+                    src=""
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
                   <div className="pt-6 text-center">
                     <h5 className="text-xl font-bold">
-                      Najmuddin
+                       Avantika Singh
                     </h5>
                     <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">
                       Founder and CEO

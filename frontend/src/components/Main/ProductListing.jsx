@@ -24,7 +24,7 @@ const ProductListing = () => {
       <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
         <img
           className="w-full h-64 bg-white-300 bg-center bg-cover rounded-lg shadow-md"
-          src={'http://localhost:3000' + item.image}
+          src={'http://localhost:3000/' + item.image}
         />
         <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-white-800">
           <h3 className="py-1 font-bold tracking-wide text-center text-black-800 uppercase dark:text-black">
@@ -57,7 +57,9 @@ const ProductListing = () => {
   }
   return (
     <div>
-      <header className='bg-body-tertiary' style={{ backgroundImage:'url(https://png.pngtree.com/background/20210714/original/pngtree-brown-papercut-background-picture-image_1224165.jpg)',backgroundSize:'cover'  }}>
+      <header className='bg-body-tertiary' style={{ backgroundImage: "url(https://wallpapers.com/images/high/light-brown-background-ze8u67khwccsklg3.webp)", backgroundSize: "cover" }}>
+      
+        
         <div className="container py-5">
           
           <form className="max-w-md mx-auto">
