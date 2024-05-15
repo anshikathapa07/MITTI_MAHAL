@@ -10,7 +10,7 @@ const Admin = () => {
         <Sidebar />
 
         </div>
-        <div className="ms-64">
+        <div className="ms-72 me-5">
         <Outlet />
 
         </div>

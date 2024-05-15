@@ -44,16 +44,16 @@ const ManageProduct = () => {
         <td>{product.price}</td>
         <td>{product.description}</td>
         <td><button
-          type="button"
+          type="submit"
           className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium 
-          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" onClick={() => deleteUser(user_id)}
+          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" onClick={() => deleteUser(product_id)}
         >
           Delete
         </button>
           <button
-            type="button"
+            type="submit"
             className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium 
-          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" onClick={() => updateUser(user_id)}
+          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" onClick={() => updateUser(product_id)}
           >
             update
           </button>
@@ -64,7 +64,7 @@ const ManageProduct = () => {
   }
   return (
       <div>
-      <div className="bg-white text-white">
+      <div className="bg-white text-black">
         <div className="container-10 py-5 align-item-center text-center font-semibold font-serif" style={{ backgroundColor: "sandybrown", color: 'black' }}>
           <h1 style={{ color: 'black' }}> Manage Product</h1>
         </div>

@@ -18,6 +18,9 @@ import About from './components/Main/About'
 import ForgetPassword from './components/ForgotPassword'
 import ManageUser from './components/Admin/ManageUser'
 import ManageProduct from './components/Admin/ManageProduct'
+import Dashboard from './components/Admin/Dashboard'
+import Cart from './components/Main/Cart'
+
 
 
 
@@ -39,6 +42,7 @@ const App = () => {
             <Route path='AddProduct' element={<AddProduct />} />
             <Route path='ManageUser' element={<ManageUser/>} />
             <Route path='ManageProduct' element={<ManageProduct/>} />
+            <Route path='Dashboard' element={<Dashboard/>} />
 
 
             </Route>
@@ -51,6 +55,7 @@ const App = () => {
             <Route path='Feedback' element={<Feedback />} />
             <Route path='viewProduct/:id' element={<ViewProduct />} />
             <Route path='About' element={<About />} />
+            <Route path='Cart' element={<Cart/>} />
 
             </Route>
 

@@ -117,12 +117,12 @@ const Sidebar = () => {
             </a>
             <hr className="my-6 border-gray-200 dark:border-gray-600" />
             <a
-              className="flex items-center px-4 py-2 mt-5 text-black-600 transition-colors duration-300 transform rounded-md  hover:bg-yellow-300   hover:text-white-700"
+              className="flex items-center px-4 py-2 mt-5  bg-red-400 text-black-600 transition-colors duration-300 transform rounded-md  hover:bg-orange-600 hover:text-white-700"
               href="#"
             >
 
               <FiLogOut />
-              <span className="flex items-center px-4 py-2 mt-3  text-black-700  rounded-md">Logout</span>
+              <span className="flex items-center px-4 py-2  text-black-700 font-semibold  rounded-md">Logout</span>
             </a>
           </nav>
           <a href="#" className="flex items-center px-4 -mx-2">

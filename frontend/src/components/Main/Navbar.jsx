@@ -12,7 +12,7 @@ const Navbar = () => {
       {/* Logo */}
       <div>
      <a className="text-2xl font-bold leading-none" href="#">
-     <img className='w-24  ' src={logo} alt="" />
+     <img className='w-24 h-12 ' src={logo} alt="" />
     </a>
           
       </div>
@@ -32,6 +32,12 @@ const Navbar = () => {
           <li className="md:px-4 md:py-2 hover:text-orange-700">
             <Link to="/Main/Contact">Contact</Link>
           </li>
+          <li className="md:px-4 md:py-2 hover:text-orange-700">
+            <Link to="/Main/Cart">
+              cart
+            </Link>
+          </li>
+          
         </ul>
       </div>
       <div className="order-3 md:order-3">
