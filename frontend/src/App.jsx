@@ -17,6 +17,7 @@ import Contact from './components/Main/Contact'
 import About from './components/Main/About'
 import ForgetPassword from './components/ForgotPassword'
 import ManageUser from './components/Admin/ManageUser'
+import ManageProduct from './components/Admin/ManageProduct'
 
 
 
@@ -37,6 +38,7 @@ const App = () => {
             <Route path='/Admin' element={<Admin />}>
             <Route path='AddProduct' element={<AddProduct />} />
             <Route path='ManageUser' element={<ManageUser/>} />
+            <Route path='ManageProduct' element={<ManageProduct/>} />
 
 
             </Route>

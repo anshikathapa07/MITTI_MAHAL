@@ -1,4 +1,4 @@
-
+import { enqueueSnackbar } from 'notistack'
 import React, { useState, useEffect } from 'react'
 
 const ManageUser = () => {
@@ -37,15 +37,29 @@ const ManageUser = () => {
         <td>{user.name}</td>
         <td>{user.email}</td>
         <td>{user.password}</td>
-        <td><button onClick={e => deleteUser(user._id)} className='btn btn-danger'>Delete</button></td>
+        <td><button
+          type="button"
+          className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium 
+          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" onClick={() => deleteUser(user_id)}
+        >
+          Delete
+        </button>
+        <button
+          type="button"
+          className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium 
+          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" onClick={() => updateUser(user_id)}
+        >
+          update
+        </button>
+        </td>
 
       </tr>
     })
   }
   return (
     <div>
-      <div className="bg-black text-white">
-        <div className="container-10 py-5" style={{ backgroundColor: 'white', color: 'black' }}>
+      <div className="bg-white text-white">
+        <div className="container-10 py-5 align-item-center text-center font-semibold font-serif" style={{ backgroundColor:"sandybrown", color: 'black' }}>
           <h1 style={{ color: 'black' }}> Manage Users</h1>
         </div>
       </div>
