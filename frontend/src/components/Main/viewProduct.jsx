@@ -41,7 +41,7 @@ const ViewProduct = () => {
                   </div>
            
                 </div>
-                <div className="md:flex-1 px-4">
+                <div className="md:flex-1 px-4 my-auto">
                   <h2 className="text-2xl font-bold text-black mb-2">
                     {productList.name}
                   </h2>

@@ -1,6 +1,9 @@
 import React from 'react'
 import Navbar from './Main/Navbar'
-
+import img1  from '../../Image/img1.jpg'
+import img2  from '../../Image/img2.jpg'
+import img3  from '../../Image/img3.jpg'
+import img4  from '../../Image/img4.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -285,7 +288,7 @@ const Home = () => {
                   Here are our heroes
                 </h2>
                 <p className="text-lg leading-relaxed m-4 text-gray-600">
-                  
+                “We value our customers above all else.”
                 </p>
               </div>
             </div>
@@ -294,7 +297,7 @@ const Home = () => {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src="img1"
+                    src={img1}
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
@@ -332,13 +335,13 @@ const Home = () => {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src=""
+                    src={img2}
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
                   <div className="pt-6 text-center">
                     <h5 className="text-xl font-bold">
-                      Saloni Singh
+                      Kriti Joshi
                     </h5>
                     <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">
                       React Developer
@@ -364,13 +367,13 @@ const Home = () => {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src=""
+                    src={img4}
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
                   <div className="pt-6 text-center">
                     <h5 className="text-xl font-bold">
-                      Kriti Joshi
+                      Avantika Singh
                     </h5>
                     <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">
                       UI/UX Designer
@@ -402,13 +405,13 @@ const Home = () => {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src=""
+                    src={img3}
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
                   <div className="pt-6 text-center">
                     <h5 className="text-xl font-bold">
-                       Avantika Singh
+                       Saloni Singh
                     </h5>
                     <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">
                       Founder and CEO
