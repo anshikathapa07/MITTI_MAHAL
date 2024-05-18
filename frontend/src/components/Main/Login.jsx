@@ -48,7 +48,7 @@ const Login = () => {
           sessionStorage.setItem('user', JSON.stringify(data));
           setLoggedIn(true);
           enqueueSnackbar("Login Successfully", { variant: "success" })
-          navigate("/User/Profile")
+          navigate("/Main/ProductListing")
         }
       } else {
         enqueueSnackbar("somthing went wrong", { variant: "warning" })

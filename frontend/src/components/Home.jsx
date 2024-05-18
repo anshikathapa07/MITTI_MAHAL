@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Main/Navbar'
-import img1  from '../../Image/img1.jpg'
+import img1  from '../../Image/img1m.jpg'
 import img2  from '../../Image/img2.jpg'
 import img3  from '../../Image/img3.jpg'
 import img4  from '../../Image/img4.jpg'

@@ -34,7 +34,7 @@ const ManageProduct = () => {
 
   const displayProducts = () => {
     return Data.map((product) => {
-      <tr>
+    return  <tr>
         <td>
           <img src={"http://localhost:3000/" + product.image} alt="" style={{ height: 40 }} />
         </td>
@@ -45,15 +45,15 @@ const ManageProduct = () => {
         <td>{product.description}</td>
         <td><button
           type="submit"
-          className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium 
-          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" onClick={() => deleteUser(product_id)}
+          className="focus:outline-none text-white bg-red-600 hover:bg-red-500 focus:ring-4 focus:ring-red-300 font-medium 
+          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-red-900" onClick={() => deleteProduct(product._id)}
         >
           Delete
         </button>
           <button
             type="submit"
             className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium 
-          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" onClick={() => updateUser(product_id)}
+          rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
           >
             update
           </button>
@@ -76,6 +76,10 @@ const ManageProduct = () => {
         <table className="min-w-full divide-y divide-gray-200">
           <thead>
             <tr>
+            <th className="px-6 py-3 text-left text-xs font-medium text-black-500 uppercase tracking-wider">
+                Image
+              </th>
+              
               <th className="px-6 py-3 text-left text-xs font-medium text-black-500 uppercase tracking-wider">
                 Name
               </th>

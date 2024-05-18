@@ -20,6 +20,7 @@ import ManageUser from './components/Admin/ManageUser'
 import ManageProduct from './components/Admin/ManageProduct'
 import Dashboard from './components/Admin/Dashboard'
 import Cart from './components/Main/Cart'
+import Checkout from './components/Main/Checkout'
 
 
 
@@ -29,39 +30,40 @@ const App = () => {
     <div>
       <SnackbarProvider>
         <BrowserRouter>
-    <AppProvider>
-      <CartProvider>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/Home' element={<Home />} />
-            <Route path='/ForgotPassword' element={<ForgetPassword />} />
-          
+          <AppProvider>
+            <CartProvider>
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/Home' element={<Home />} />
+                <Route path='/ForgotPassword' element={<ForgetPassword />} />
 
 
-            <Route path='/Admin' element={<Admin />}>
-            <Route path='AddProduct' element={<AddProduct />} />
-            <Route path='ManageUser' element={<ManageUser/>} />
-            <Route path='ManageProduct' element={<ManageProduct/>} />
-            <Route path='Dashboard' element={<Dashboard/>} />
+
+                <Route path='/Admin' element={<Admin />}>
+                  <Route path='AddProduct' element={<AddProduct />} />
+                  <Route path='ManageUser' element={<ManageUser />} />
+                  <Route path='ManageProduct' element={<ManageProduct />} />
+                  <Route path='Dashboard' element={<Dashboard />} />
 
 
-            </Route>
+                </Route>
 
-            <Route path='/Main' element={<Main />}>
-            <Route path='Login' element={<Login />} />
-            <Route path='Signup' element={<Signup />} />
-            <Route path='Contact' element={<Contact />} />
-            <Route path='ProductListing' element={<ProductListing />} />
-            <Route path='Feedback' element={<Feedback />} />
-            <Route path='viewProduct/:id' element={<ViewProduct />} />
-            <Route path='About' element={<About />} />
-            <Route path='Cart' element={<Cart/>} />
+                <Route path='/Main' element={<Main />}>
+                  <Route path='Login' element={<Login />} />
+                  <Route path='Signup' element={<Signup />} />
+                  <Route path='Contact' element={<Contact />} />
+                  <Route path='ProductListing' element={<ProductListing />} />
+                  <Route path='Feedback' element={<Feedback />} />
+                  <Route path='viewProduct/:id' element={<ViewProduct />} />
+                  <Route path='About' element={<About />} />
+                  <Route path='Cart' element={<Cart />} />
+                  <Route path='Checkout' element={<Checkout/>} />
 
-            </Route>
+                </Route>
 
-          </Routes>
-          </CartProvider>
-    </AppProvider>
+              </Routes>
+            </CartProvider>
+          </AppProvider>
         </BrowserRouter>
       </SnackbarProvider>
     </div>

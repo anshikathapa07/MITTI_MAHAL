@@ -23,9 +23,6 @@ export const CartProvider = ({ children }) => {
         setCartItems([...cartItems, { ...item, quantity: 1 }]);
     };
 
-
-
-
     const removeItemFromCart = (item) => {
         const exist = cartItems.find((cartItem) => cartItem._id === item._id);
         if (exist.quantity === 1) {
@@ -51,7 +48,7 @@ export const CartProvider = ({ children }) => {
     };
 
     const getCartTotal = () => {
-        return cartItems.reduce((acc, item) => acc + item.pprice * item.quantity, 0);
+        return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
     };
 
     const getCartItemsCount = () => {
