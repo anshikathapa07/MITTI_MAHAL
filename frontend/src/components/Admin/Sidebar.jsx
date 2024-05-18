@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { AiFillProduct } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
 import logo from "../../assets/LOGOmm.png"
+import { MdContactPage } from "react-icons/md";
 const Sidebar = () => {
   return (
     <>
@@ -88,6 +89,15 @@ const Sidebar = () => {
               <AiFillProduct />
               <span className="mx-4 font-medium">Products</span>
             </Link>
+            <Link
+              className="flex items-center px-4 py-2 mt-3  text-black-700 bg-white rounded-md  hover:text-red-400 dark:text-black-"
+              to=""
+            >
+        
+              <MdContactPage />
+              <span className="mx-4 font-medium">Contacts</span>
+            </Link>
+
            
             <hr className="my-6 border-gray-200 dark:border-gray-600" />
             <a

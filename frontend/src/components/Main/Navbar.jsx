@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import  logo  from "../../assets/LOGOmm.png"
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 const Navbar = () => {
   return (
@@ -32,9 +33,9 @@ const Navbar = () => {
           <li className="md:px-4 md:py-2 hover:text-orange-700">
             <Link to="/Main/Contact">Contact</Link>
           </li>
-          <li className="md:px-4 md:py-2 hover:text-orange-700">
+          <li className="md:px-2 md:py-2 hover:text-orange-700">
             <Link to="/Main/Cart">
-              cart
+            <MdOutlineShoppingCart size={25} />
             </Link>
           </li>
           

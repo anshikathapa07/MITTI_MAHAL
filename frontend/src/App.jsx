@@ -21,6 +21,7 @@ import ManageProduct from './components/Admin/ManageProduct'
 import Dashboard from './components/Admin/Dashboard'
 import Cart from './components/Main/Cart'
 import Checkout from './components/Main/Checkout'
+import Order from './components/Main/Order'
 
 
 
@@ -58,6 +59,7 @@ const App = () => {
                   <Route path='About' element={<About />} />
                   <Route path='Cart' element={<Cart />} />
                   <Route path='Checkout' element={<Checkout/>} />
+                  <Route path='Order' element={<Order/>} />
 
                 </Route>
 
