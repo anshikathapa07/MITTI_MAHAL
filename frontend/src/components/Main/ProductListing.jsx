@@ -12,6 +12,7 @@ const ProductListing = () => {
       const data = await res.json();
       console.log(data)
       setProducts(data)
+      setMasterList(data)
     }
   }
   useEffect(() => {
@@ -22,11 +23,11 @@ const ProductListing = () => {
     return products.map((item) => (
 
       <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-       <Link to={`/Main/viewProduct/${item._id}`}>  <img
+        <Link to={`/Main/viewProduct/${item._id}`}>  <img
           className="w-full h-64 bg-white-300 bg-center bg-cover rounded-lg shadow-md"
           src={'http://localhost:3000/' + item.image}
-         /> </Link>
-       
+        /> </Link>
+
         <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-white-800">
           <h3 className="py-1 font-bold tracking-wide text-center text-black-800 uppercase dark:text-black">
             {item.name}
@@ -48,21 +49,22 @@ const ProductListing = () => {
   }
 
   const applysearch = (e) => {
-    const inputText = e.target.value;
-
+    const value = e.target.value;
     setProducts(masterList.filter((product) => {
-      return product.category.toLowerCase().includes(inputText.topLowerCase());
+      return (product.name.toLowerCase().includes(value.toLowerCase()));
     }));
-
-
   }
+
+  const filterbyCategory = (category) => {
+    console.log(category)
+    const filtercategory = masterList.filter(cat => cat.category.toLowerCase().includes(category.toLowerCase()));
+    setProducts(filtercategory)
+  }
+
   return (
     <div>
       <header className='bg-body-tertiary' style={{ backgroundImage: "url(https://wallpapers.com/images/high/light-brown-background-ze8u67khwccsklg3.webp)", backgroundSize: "cover" }}>
-      
-        
         <div className="container py-5">
-          
           <form className="max-w-md mx-auto">
             <label
               htmlFor="default-search"
@@ -92,17 +94,28 @@ const ProductListing = () => {
                 type="search"
                 id="default-search"
                 className="block w-full p-4 ps-10 text-sm text-gray-900 border border-black-300 rounded-lg bg-white-50 focus:ring-black-500 focus:border-black-500 dark:border-black-600 dark:placeholder-black-400 dark:text-black "
-                placeholder="Search Mockups, Logos..."
-                required=""
+                placeholder="Search "
+                onChange={applysearch}
               />
               <button
                 type="submit"
                 className="text-white absolute end-2.5 bottom-2.5 bg-orange-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+
               >
                 Search
               </button>
             </div>
           </form>
+          <div className='flex justify-evenly mt-5'>
+            <button className="bg-transparent hover:bg-orange-700 text-white font-bold hover:text-white py-2 px-4 border border-black-500 hover:border-black rounded"
+              id="showpieces" onClick={(e) => filterbyCategory("showpieces")}>
+              Showpiece
+            </button>
+            <button className="bg-transparent hover:bg-orange-700 text-white font-bold hover:text-white py-2 px-4 border border-black-500 hover:border-black rounded"
+              id="utensils" onClick={(e) => filterbyCategory("utensils")}>Utensils</button>
+            <button className="bg-transparent hover:bg-orange-700 text-white font-bold hover:text-white py-2 px-4 border border-black-500 hover:border-black rounded"
+              id="Watercontainers" onClick={(e) => filterbyCategory("WaterContainers")}>Water Container</button>
+          </div>
 
         </div>
       </header>

@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
   return (
     <div>
-      <section className="bg-white h-full mt-2 ">
+      <section className=" h-full mt-2 "style={{ backgroundColor: '#edcfc2' }}>
         <div className="container h-full w-full py-20 px-4 sm:px-6 lg:px-8  " style={{ backgroundColor: '#edcfc2' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <div className="max-w-lg">
@@ -30,13 +30,7 @@ const About = () => {
           </div>
         </div>
       </section>
-
-
-
-
-
-    </div>
+     </div> 
   )
 }
-
 export default About

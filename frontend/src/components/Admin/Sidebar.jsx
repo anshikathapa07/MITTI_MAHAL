@@ -91,7 +91,7 @@ const Sidebar = () => {
             </Link>
             <Link
               className="flex items-center px-4 py-2 mt-3  text-black-700 bg-white rounded-md  hover:text-red-400 dark:text-black-"
-              to=""
+              to="/Admin/ManageContact"
             >
         
               <MdContactPage />

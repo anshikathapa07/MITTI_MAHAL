@@ -22,6 +22,7 @@ import Dashboard from './components/Admin/Dashboard'
 import Cart from './components/Main/Cart'
 import Checkout from './components/Main/Checkout'
 import Order from './components/Main/Order'
+import ManagerContact from './components/Admin/ManageContact'
 
 
 
@@ -44,6 +45,7 @@ const App = () => {
                   <Route path='AddProduct' element={<AddProduct />} />
                   <Route path='ManageUser' element={<ManageUser />} />
                   <Route path='ManageProduct' element={<ManageProduct />} />
+                  <Route path='ManageContact' element={<ManagerContact />} />
                   <Route path='Dashboard' element={<Dashboard />} />
 
 
