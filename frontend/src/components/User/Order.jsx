@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
 
-const OrderHistory = () => {
+const Order = () => {
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
   const [paymentData, setPaymentData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -54,4 +54,4 @@ const OrderHistory = () => {
   );
 };
 
-export default OrderHistory;
+export default Order;

@@ -25,6 +25,8 @@ import Order from './components/User/Order'
 import ManagerContact from './components/Admin/ManageContact'
 import AdminAuth from './AdminAuth'
 import UserAuth from './UserAuth'
+import OrderHistory from './components/User/Order'
+
 
 
 
@@ -67,6 +69,14 @@ const App = () => {
                   <Route path='Order' element={<Order/>} />
 
                 </Route>
+                <Route path='/User' element={<User />}>
+                 <Route path='Checkout' element={<Checkout />} />
+                 <Route path='Order' element={<OrderHistory />} />
+                 <Route path='PaymentGateway' element={<OrderHistory />} />
+
+                 
+                 </Route>
+                
 
               </Routes>
             </CartProvider>
