@@ -20,9 +20,11 @@ import ManageUser from './components/Admin/ManageUser'
 import ManageProduct from './components/Admin/ManageProduct'
 import Dashboard from './components/Admin/Dashboard'
 import Cart from './components/Main/Cart'
-import Checkout from './components/Main/Checkout'
-import Order from './components/Main/Order'
+import Checkout from './components/User/Checkout'
+import Order from './components/User/Order'
 import ManagerContact from './components/Admin/ManageContact'
+import AdminAuth from './AdminAuth'
+import UserAuth from './UserAuth'
 
 
 
@@ -37,11 +39,12 @@ const App = () => {
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/Home' element={<Home />} />
+                <Route path='/AdminAuth' element={<AdminAuth />} />
                 <Route path='/ForgotPassword' element={<ForgetPassword />} />
 
 
 
-                <Route path='/Admin' element={<Admin />}>
+                <Route path='/Admin' element={<AdminAuth> <Admin /> </AdminAuth>}>
                   <Route path='AddProduct' element={<AddProduct />} />
                   <Route path='ManageUser' element={<ManageUser />} />
                   <Route path='ManageProduct' element={<ManageProduct />} />
@@ -57,7 +60,7 @@ const App = () => {
                   <Route path='Contact' element={<Contact />} />
                   <Route path='ProductListing' element={<ProductListing />} />
                   <Route path='Feedback' element={<Feedback />} />
-                  <Route path='viewProduct/:id' element={<ViewProduct />} />
+                  <Route path='viewProduct/:id' element={<UserAuth> <ViewProduct /></UserAuth>} />
                   <Route path='About' element={<About />} />
                   <Route path='Cart' element={<Cart />} />
                   <Route path='Checkout' element={<Checkout/>} />

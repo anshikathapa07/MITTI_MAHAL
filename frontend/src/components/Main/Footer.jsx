@@ -21,7 +21,7 @@ export default function Footer() {
           y="0"
         >
           <polygon
-            className="text-gray-300 fill-current"
+            className="text-orange-700 fill-current"
             points="2560 0 2560 100 0 100"
           ></polygon>
         </svg>
@@ -88,9 +88,9 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://blog.creative-tim.com">blog
-                    </a>
+                    <Link className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                        to="/Main/Contact">Contact
+                    </Link>
                   </li>
 
                 </ul>
@@ -112,9 +112,9 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us">Contact Us
-                    </a>
+                    <Link className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                        to="/Main/Contact">Contact Us
+                    </Link>
                   </li>
                 </ul>
 

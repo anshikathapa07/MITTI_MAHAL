@@ -16,7 +16,9 @@ import Footer from './Main/Footer';
 import { FaInstagram } from "react-icons/fa"
 import { FaTwitter } from "react-icons/fa"
 import { FaFacebookF } from "react-icons/fa6";
-
+import { MdOutlineLocalShipping } from "react-icons/md"
+import { FcCustomerSupport } from "react-icons/fc";
+import { RiSecurePaymentLine } from "react-icons/ri";
 const Home = () => {
   return (
     <>
@@ -70,7 +72,8 @@ const Home = () => {
                     <p className="mt-2 mb-4 text-gray-600">
                       Transform your home into a gallery with our exquisite clay showpieces.
                     </p>
-                    <button className="bg-orange-900 text-white py-1 px-3 rounded font-serif">Explore</button>
+                    <Link to='/Main/ProductListing'>
+                    <button className="bg-orange-900 text-white py-1 px-3 rounded font-serif">Explore</button></Link>
                   </div>
                 </div>
               </div>
@@ -87,7 +90,8 @@ const Home = () => {
                     <p className="mt-2 mb-4 text-gray-600">
                       Quench Your Thirst Responsibly: Carry Our Water Bottles.
                     </p>
-                    <button className="bg-orange-900 text-white py-1 px-3 rounded font-serif">Explore</button>
+                    <Link to='/Main/ProductListing'>
+                    <button className="bg-orange-900 text-white py-1 px-3 rounded font-serif">Explore</button></Link>
 
                   </div>
                 </div>
@@ -105,7 +109,8 @@ const Home = () => {
                     <p className="mt-2 mb-4 text-black ">
                       Tools for Tasteful Creations: Discover Our Utensil Collection
                     </p>
-                    <button className="bg-orange-900 text-white py-1 px-3 rounded font-serif">Explore</button>
+                    <Link to='/Main/ProductListing'>
+                    <button className="bg-orange-900 text-white py-1 px-3 rounded font-serif">Explore</button></Link>
 
                   </div>
                 </div>
@@ -465,7 +470,7 @@ const Home = () => {
             <div className="flex flex-wrap text-center justify-center">
               <div className="w-full lg:w-6/12 px-4">
                 <h2 className="text-4xl font-bold text-black font-serif">
-                  Build something
+                  Our Features
                 </h2>
                 <p className="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
                   
@@ -474,45 +479,43 @@ const Home = () => {
             </div>
             <div className="flex flex-wrap mt-12 justify-center">
               <div className="w-full lg:w-3/12 px-4 text-center">
-                <div className="text-black-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-medal text-xl"></i>
+                <div className="text-black-900 p-3 w-12 h-12 shadow-lg  rounded-full bg-white inline-flex items-center justify-center">
+                <MdOutlineLocalShipping />
                 </div>
                 <h6 className="text-xl mt-5 font-bold text-orange-900">
-                  Excelent Services
+                  All India Shipping
                 </h6>
                 <p className="mt-2 mb-4 text-black">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  Get your products at your doorsteps.
                 </p>
               </div>
               <div className="w-full lg:w-3/12 px-4 text-center">
                 <div className="text-black-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-poll text-xl"></i>
+                <FcCustomerSupport />
                 </div>
                 <h5 className="text-xl mt-5 font-bold text-orange-900">
-                  Grow your market
+                  Customer Support
                 </h5>
                 <p className="mt-2 mb-4 text-black">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  Support 24/7
                 </p>
               </div>
               <div className="w-full lg:w-3/12 px-4 text-center">
                 <div className="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-lightbulb text-xl"></i>
+                <RiSecurePaymentLine />
                 </div>
                 <h5 className="text-xl mt-5 font-bold text-orange-900">
-                  Launch time
+                  Payment
                 </h5>
                 <p className="mt-2 mb-4 text-black">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  Secure payment
                 </p>
               </div>
             </div>
           </div>
         </section>
-        <section className="relative block py-24 lg:pt-0 bg-white-900">
+        <form>
+        <section className="relative block py-24 lg:pt-0 bg-white-300">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
               <div className="w-full lg:w-6/12 px-4">
@@ -583,6 +586,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+        </form>
       </main>
 <Footer />
     </>

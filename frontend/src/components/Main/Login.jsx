@@ -126,7 +126,7 @@ const Login = () => {
                 <label className="block text-dark-700 text-lg font-bold mb-2">
                   Password
                 </label><span style={{ color: 'red', fontSize: '10' }}>{LoginForm.touched.paasword && LoginForm.errors.password}</span>
-                <Link to="/ForgotPassword" className="text-sm text-blue-500">
+                <Link to="/ForgotPassword" className="text-sm text-blue-500 font-bold">
                   Forget Password?
                 </Link>
               </div>
@@ -150,7 +150,7 @@ const Login = () => {
             </div>
             <div className="mt-4 flex items-center justify-between">
               <span className="border-b w-1/5 md:w-1/4" />
-              <a href="/Main/Signup" className="text-sm text-black-500 uppercase">
+              <a href="/Main/Signup" className="text-sm text-blue-500 uppercase font-bold">
                 or sign up
               </a>
               <span className="border-b w-1/5 md:w-1/4" />
