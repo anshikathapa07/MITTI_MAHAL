@@ -20,12 +20,13 @@ import ManageUser from './components/Admin/ManageUser'
 import ManageProduct from './components/Admin/ManageProduct'
 import Dashboard from './components/Admin/Dashboard'
 import Cart from './components/Main/Cart'
-import Checkout from './components/User/Checkout'
-import Order from './components/User/Order'
 import ManagerContact from './components/Admin/ManageContact'
 import AdminAuth from './AdminAuth'
 import UserAuth from './UserAuth'
-import OrderHistory from './components/User/Order'
+import Checkout from './components/User/Checkout'
+import Order from './components/User/Order'
+import ThankYou from './components/User/Thankyou'
+
 
 
 
@@ -43,6 +44,9 @@ const App = () => {
                 <Route path='/Home' element={<Home />} />
                 <Route path='/AdminAuth' element={<AdminAuth />} />
                 <Route path='/ForgotPassword' element={<ForgetPassword />} />
+                <Route path='/Checkout' element={<Checkout />} />
+                <Route path='/Order' element={<Order />} />
+                <Route path='/thankyou' element={<ThankYou />} />
 
 
 
@@ -65,18 +69,16 @@ const App = () => {
                   <Route path='viewProduct/:id' element={<UserAuth> <ViewProduct /></UserAuth>} />
                   <Route path='About' element={<About />} />
                   <Route path='Cart' element={<Cart />} />
-                  <Route path='Checkout' element={<Checkout/>} />
-                  <Route path='Order' element={<Order/>} />
+                  <Route path='Checkout' element={<Checkout />} />
+                  <Route path='Order' element={<Order />} />
 
                 </Route>
-                <Route path='/User' element={<User />}>
-                 <Route path='Checkout' element={<Checkout />} />
-                 <Route path='Order' element={<OrderHistory />} />
-                 <Route path='PaymentGateway' element={<OrderHistory />} />
+                {/* <Route path='/User' element={<User />}>
+                  <Route path='Checkout' element={<Checkout />} />
+                  <Route path='Order' element={<OrderHistory />} />
+                  <Route path='PaymentGateway' element={<OrderHistory />} />
+                </Route> */}
 
-                 
-                 </Route>
-                
 
               </Routes>
             </CartProvider>

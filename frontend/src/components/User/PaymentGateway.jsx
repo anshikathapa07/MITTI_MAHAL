@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ElementsConsumer, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import useAppContext from '../../Context/AppContext';
+import useAppContext from '../Context/UserContext';
 
 
 const PaymentGateway = () => {
@@ -18,7 +18,7 @@ const PaymentGateway = () => {
         const result = await stripe.confirmPayment({
             elements,
             confirmParams: {
-                return_url: "http://localhost:5173/User/thankyou",
+                return_url: "http://localhost:5173/thankyou",
                 receipt_email: currentUser.email,
             },
         });

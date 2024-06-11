@@ -4,8 +4,8 @@ import * as Yup from 'yup';
 import { loadStripe } from '@stripe/stripe-js';
 import PaymentGateway from './PaymentGateway';
 import { Elements } from '@stripe/react-stripe-js';
-import useCartContext from '../../Context/CartContext';
-import useAppContext from '../../Context/AppContext';
+import useCartContext from '../Context/CartContext';
+import useAppContext from '../Context/UserContext';
 
 const appearance = {
     theme: "day",
@@ -30,7 +30,7 @@ function Checkout() {
     const pincodeRef = useRef();
     const contactRef = useRef();
 
-    const stripePromise = loadStripe('pk_test_51OfemmSAfzZtNsjPArIjjac6Mgz9TpxlhHcrFIBOG7tE4NZrWXEN9rxbQFzUZ3cJQ7mQORbyVCfCpMtqhRwIWOVL00mZBYhk3d');
+    const stripePromise = loadStripe('pk_test_51OYVLJSHHMuJf4FILH25HpbbABmaxKgmZsCYZcs5fV5LQj082DT92w6BbLTjWK5uXnsy0GyQMVtNsERLsi2Xt0HW00BSjil91a');
     const getPaymentIntent = async () => {
         const shipping = {
             name: currentUser.name,
@@ -42,7 +42,7 @@ function Checkout() {
         };
         sessionStorage.setItem('shipping', JSON.stringify(shipping));
         // console.log(getCartTotal());
-        const res = await fetch('http://localhost:5000/create-payment-intent', {
+        const res = await fetch('http://localhost:3000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ function Checkout() {
                                                     <div className="flex items-start gap-4">
                                                         <div className="w-24 h-20 max-lg:w-24 max-lg:h-24 flex p-2 shrink-0 bg-orange-300 rounded-md">
                                                             <img
-                                                                src={'http://localhost:5000/' + item.image}
+                                                                src={'http://localhost:3000/' + item.image}
                                                                 className="w-full object-contain"
                                                             />
                                                         </div>

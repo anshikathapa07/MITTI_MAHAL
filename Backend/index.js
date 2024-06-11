@@ -8,7 +8,7 @@ const productRouter = require('./Routers/Product');
 const contactRouter = require('./Routers/Contact');
 const utilRouter = require('./Routers/Util');
 const orderRouter = require('./Routers/Order');
-const stripe = require('stripe')('');
+const stripe = require('stripe')('sk_test_51OYVLJSHHMuJf4FIU73CE1EXUqBOtSaFTmRS87JO2HT18483Z8qIKFnW8DC2mHPtlQjmVPcxU7N8JRkDrbNEiKTg00iZUNjx1O');
 
 
 
